@@ -21,7 +21,7 @@
   --shadow:0 6px 24px rgba(122,63,143,.12);--r:24px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
+html{scroll-behavior:auto;overflow-x:hidden;-webkit-text-size-adjust:100%}
 body{overflow-x:clip}
 .wrap{min-width:0}
 .tile b,.cmprow b,.row .v,.reason div,.step p,.pr b,.pc .nm{overflow-wrap:anywhere}
@@ -172,7 +172,7 @@ mark{background:linear-gradient(transparent 55%,#ffc2d6 55%);color:inherit;font-
 .cmphead .plus{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#fff;font-size:34px;line-height:1;display:grid;place-items:center;box-shadow:0 8px 18px rgba(255,127,165,.4)}
 .cmphead .slot b{margin:0;color:var(--navy)}
 .cmphead .rm{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:#f4dde8;color:var(--navy);font-size:18px;line-height:1;display:grid;place-items:center;z-index:2}
-.sheet{position:fixed;inset:0;z-index:50;background:rgba(40,15,50,.45);display:flex;align-items:flex-end;justify-content:center;animation:f .2s}
+.sheet{position:fixed;inset:0;z-index:50;background:rgba(40,15,50,.45);display:flex;align-items:flex-end;justify-content:center}
 .sheet .pn{background:#fff;width:100%;max-width:640px;max-height:84vh;border-radius:26px 26px 0 0;display:flex;flex-direction:column;overflow:hidden}
 .sheet .hd{padding:16px 16px 10px;display:flex;align-items:center;gap:10px}
 .sheet .hd b{flex:1;font-size:17px}
@@ -641,13 +641,13 @@ document.addEventListener("input",e=>{
   if(e.target.id==="pq"){S.pq=e.target.value;$("#plist").innerHTML=PList()}
 });
 /* ===== Nút Back của điện thoại: quay lại màn hình trước thay vì thoát app ===== */
-function pushNav(){try{const n=((history.state&&history.state.n)||0)+1;history.pushState({n,view:S.view,open:S.open,tab:S.tab,pick:S.pick},"")}catch(e){}}
+function pushNav(){try{history.replaceState(Object.assign({},history.state,{y:scrollY}),"");const n=((history.state&&history.state.n)||0)+1;history.pushState({n,view:S.view,open:S.open,tab:S.tab,pick:S.pick},"")}catch(e){}}
 function popSheet(){try{if(history.state&&history.state.pick!=null)history.back()}catch(e){}}
 try{history.replaceState({n:0,view:"home",open:null,tab:"tong",pick:null},"")}catch(e){}
 window.addEventListener("popstate",e=>{
   const st=e.state;if(!st)return;
   S.view=st.view;S.open=st.open;S.tab=st.tab||"tong";S.pick=st.pick;
-  render();if(S.pick==null)scrollTo(0,0);
+  render();window.scrollTo({top:S.pick==null?(st.y||0):scrollY,left:0,behavior:"instant"});
 });
 if("serviceWorker" in navigator&&location.protocol!=="file:"){
   window.addEventListener("load",()=>{try{navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}});
