@@ -865,10 +865,10 @@ document.addEventListener("input",e=>{
 
   /* ---- giao diện ---- */
   const fab=document.createElement("button");fab.id="fab";fab.setAttribute("aria-label","Mở trợ lý AI");const catSvg=id=>CATPIC.replace(/id="cc"/g,`id="${id}"`).replace(/url\(#cc\)/g,`url(#${id})`).replace(/ id="cp"/g,"");
-  fab.innerHTML=`<span class="av">${catSvg("ccf")}</span><span class="beta">BETA</span>`;
+  fab.innerHTML=`<span class="av">${catSvg("ccf")}</span><span class="beta">Milo</span>`;
   const tip=document.createElement("div");tip.id="fabtip";tip.className="hide";tip.innerHTML="<b>Trợ lý AI Điệp TGDĐ</b><span>Em rất sẵn lòng hỗ trợ bạn 😊</span>";
   const chat=document.createElement("div");chat.id="chat";chat.className="hide";
-  chat.innerHTML=`<div class="cw"><div class="ch"><span class="av">${catSvg("cch")}</span><div class="tt"><b>Trợ lý AI</b><small>Điệp TGDĐ · Beta</small></div><button id="cx" aria-label="Đóng">×</button></div><div id="cm"></div><div id="cs"></div><form id="cf"><input id="ci" type="text" placeholder="Hỏi em về điện thoại…" autocomplete="off" enterkeyhint="send"><button type="submit" aria-label="Gửi">➤</button></form></div>`;
+  chat.innerHTML=`<div class="cw"><div class="ch"><span class="av">${catSvg("cch")}</span><div class="tt"><b>Trợ lý AI</b><small>Điệp TGDĐ · Milo</small></div><button id="cx" aria-label="Đóng">×</button></div><div id="cm"></div><div id="cs"></div><form id="cf"><input id="ci" type="text" placeholder="Hỏi em về điện thoại…" autocomplete="off" enterkeyhint="send"><button type="submit" aria-label="Gửi">➤</button></form></div>`;
   document.body.append(fab,tip,chat);
   const cm=chat.querySelector("#cm"),cs=chat.querySelector("#cs"),ci=chat.querySelector("#ci");
   cs.innerHTML=SUGG.map(t=>`<button data-ask="${esc(t)}">${esc(t)}</button>`).join("");
