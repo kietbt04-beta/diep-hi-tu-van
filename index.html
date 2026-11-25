@@ -155,7 +155,9 @@ mark{background:linear-gradient(transparent 55%,#ffc2d6 55%);color:inherit;font-
 .cmphead b{display:block;font-size:14px;margin-top:6px}
 .cmprow{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:12px 14px;margin-bottom:8px}
 .cmprow>span{display:block;font-size:11px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-.cmprow div{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-weight:700}
+.cmprow div{display:grid;grid-template-columns:1fr 1fr;gap:0;font-weight:700}
+.cmprow div>*{padding:2px 12px 2px 0}
+.cmprow div>*+*{padding:2px 0 2px 14px;border-left:2px solid #e8b3ca}
 .cmprow div i{font-style:normal;color:#b6bfce;font-weight:500}
 .cmphead .c{position:relative;font:inherit;color:inherit}
 .cmphead .c small{display:block;font-size:11px;color:var(--mut);margin-top:2px}
