@@ -186,6 +186,51 @@ mark{background:linear-gradient(transparent 55%,#ffc2d6 55%);color:inherit;font-
 .pr .th img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .pr b{display:block;font-size:15px;line-height:1.25}
 .pr span{font-size:12px;color:var(--mut)}
+/* ----- Trợ lý AI ----- */
+#fab{position:fixed;right:14px;bottom:calc(78px + env(safe-area-inset-bottom));width:64px;height:64px;border-radius:50%;background:#fff;padding:3px;z-index:35;box-shadow:0 8px 24px rgba(90,45,110,.38)}
+.av{display:block;width:100%;height:100%;border-radius:50%;background:var(--catimg) 80.5% 52.4%/260% auto no-repeat,#ffe4ee}
+#fab .beta{position:absolute;top:-9px;left:-8px;background:#eef0f6;color:#475569;font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+#fab:active{transform:scale(.95)}
+#fabtip{position:fixed;right:88px;bottom:calc(98px + env(safe-area-inset-bottom));max-width:230px;background:#fff;border-radius:18px;padding:10px 14px;z-index:35;box-shadow:0 8px 24px rgba(90,45,110,.25);line-height:1.35}
+#fabtip b{display:block;font-size:14px;color:var(--tx)}
+#fabtip span{font-size:13px;color:var(--mut)}
+#chat{position:fixed;inset:0;z-index:60;background:rgba(40,15,50,.45);display:flex;align-items:flex-end;justify-content:center}
+#chat .cw{width:100%;max-width:640px;height:86vh;height:86dvh;background:#fff4f8;border-radius:26px 26px 0 0;display:flex;flex-direction:column;overflow:hidden}
+#chat .ch{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;background:linear-gradient(135deg,#ff8fb1,#c58bf2);color:#fff}
+#chat .ch .av{width:44px;height:44px;flex:none;border:2px solid #fff}
+#chat .tt{flex:1;line-height:1.2}
+#chat .tt b{display:block;font-size:17px}
+#chat .tt small{font-size:12px;opacity:.9}
+#cx{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.25);color:#fff;font-size:24px;line-height:1}
+#cm{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;-webkit-overflow-scrolling:touch}
+.mg{max-width:90%;padding:10px 13px;border-radius:16px;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.mg p{margin:0 0 6px}.mg p:last-child{margin:0}
+.mg.bot{align-self:flex-start;background:#fff;border-radius:4px 16px 16px 16px;box-shadow:0 2px 8px rgba(90,45,110,.08)}
+.mg.me{align-self:flex-end;background:linear-gradient(135deg,#ff8fb1,#c58bf2);color:#fff;border-radius:16px 4px 16px 16px}
+.mg .hint{font-size:12px;color:var(--mut)}
+.mg .sc{background:#fff4f8;border-left:3px solid var(--gold);padding:8px 10px;border-radius:8px}
+.dots{display:inline-flex;gap:4px;padding:4px 2px}.dots i{width:7px;height:7px;border-radius:50%;background:#d6a9c0;animation:bl 1s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.pk{display:flex;gap:10px;background:#fff4f8;border-radius:14px;padding:8px;margin:6px 0}
+.pk .th{width:64px;height:64px;flex:none;border-radius:12px;background:#fdf1f6;display:grid;place-items:center;overflow:hidden}
+.pk .th img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.pk .in{min-width:0;flex:1}
+.pk b{display:block;font-size:15px;line-height:1.25}
+.pk .pr{display:block;font-size:13px;font-weight:700;color:var(--navy)}
+.pk small{display:block;font-size:12px;color:var(--mut);margin-top:1px}
+.mg .bt{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.mg .bt button{padding:7px 12px;border-radius:10px;background:var(--navy);color:#fff;font-size:13px;font-weight:600}
+.mg .bt button.alt{background:#fde6ef;color:var(--navy)}
+.tb{margin:6px 0;border:1px solid #f1dbe6;border-radius:12px;overflow:hidden}
+.tb .r{display:grid;grid-template-columns:70px 1fr 1fr;gap:8px;padding:7px 10px;border-bottom:1px solid #f6e8ef;font-size:13px}
+.tb .r:last-child{border:0}
+.tb .r span{color:var(--mut);font-weight:600}
+#cs{display:flex;gap:8px;overflow-x:auto;padding:4px 14px 8px;scrollbar-width:none}
+#cs::-webkit-scrollbar{display:none}
+#cs button{flex:none;padding:8px 13px;border-radius:999px;background:#fff;border:1.5px solid #f0c9da;font-size:13px;font-weight:600;color:var(--navy)}
+#cf{display:flex;gap:8px;padding:8px 12px calc(12px + env(safe-area-inset-bottom));background:#fff}
+#cf input{flex:1;min-width:0;border:1.5px solid #f0c9da;border-radius:999px;padding:12px 16px;font:inherit;font-size:16px;outline:0;background:#fff4f8;color:var(--tx)}
+#cf button{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#ff8fb1,#c58bf2);color:#fff;font-size:18px;flex:none}
 .cvar{display:flex;flex-direction:column;gap:9px;margin-top:3px}
 .cchips{display:flex;flex-wrap:wrap;gap:6px}
 .cchip{padding:5px 10px;border-radius:9px;border:1.5px solid #ecd6e1;background:#fff;font-size:12px;font-weight:600;color:var(--tx);line-height:1.2}
@@ -348,6 +393,13 @@ const SS_PRICE={"Galaxy A07":3690000,"Galaxy A07S":3770000,"Galaxy A07 5G":58900
 PHONES.forEach(p=>{if(SS_PRICE[p.name])p.price=SS_PRICE[p.name]});
 const SS_VAR={"Galaxy A07":{"vm":["4GB/64GB","6GB/128GB"],"vc":[["Tím nhạt","#DFC7FF"],["Xanh lá","#A7CC8E"],["Đen","#000000"]]},"Galaxy A07S":{"vm":["4GB/64GB"],"vc":[["Đen","#000000"],["Xanh lá","#A7CC8E"],["Tím","#DFC7FF"]]},"Galaxy A18":{"vm":["4GB/128GB","6GB/128GB","8GB/128GB"],"vc":[["Đen","#000000"],["Bạc","#F0F0F0"],["Xanh Dương","#A3C3FF"]]},"Galaxy A07 5G":{"vm":["4GB/128GB","6GB/128GB"],"vc":[["Xanh lá","#A7CC8E"],["Tím","#A17ECC"],["Đen","#000000"]]},"Galaxy A17 5G":{"vm":["128GB","256GB"],"vc":[["Xám","#7B7B7B"],["Đen","#000000"],["Xanh Dương","#A3C3FF"]]},"Galaxy A27 5G":{"vm":["6GB","8GB"],"vc":[["Hồng","#FFE3E3"],["Xanh đen","#17213E"],["Đen","#000000"]]},"Galaxy A37 5G":{"vm":["8GB/128GB","6GB/128GB","8GB/256GB"],"vc":[["Đen","#000000"],["Xanh lá đậm","#386B3F"],["Trắng","#FBF7F4"],["Tím","#A17ECC"]]},"Galaxy S25 Ultra":{"vm":["256GB","512GB"],"vc":[["Xanh Dương","#A3C3FF"],["Xám","#7B7B7B"],["Trắng - Bạc","#D9D9D9"],["Đen","#000000"]]},"Galaxy S26 FE":{"vm":["8GB/128GB","8GB/256GB"],"vc":[["Xám","#7B7B7B"],["Xanh Dương","#A3C3FF"],["Xanh lá","#A7CC8E"]]},"Galaxy A57 5G":{"vm":["8GB/128GB","8GB/256GB","12GB/256GB"],"vc":[["Xanh dương nhạt","#D1F4FF"],["Tím","#A17ECC"],["Xanh đen","#17213E"],["Xám","#7B7B7B"]]},"Galaxy S26":{"vm":["256GB","512GB"],"vc":[["Xanh Dương","#A3C3FF"],["Đen","#000000"],["Tím","#A17ECC"],["Trắng","#FBF7F4"]]},"Galaxy A08":{"vm":["64GB","128GB"],"vc":[["Xanh lá","#A7CC8E"],["Xanh Dương","#A3C3FF"],["Bạc","#F0F0F0"]]},"Galaxy S25 FE 5G":{"vm":["128GB","256GB"],"vc":[["Đen","#000000"],["Trắng","#FBF7F4"],["Xanh Navy","#060042"],["Xanh dương nhạt","#D1F4FF"]]},"Galaxy Z Flip7 FE":{"vm":["128GB","256GB"],"vc":[["Trắng","#FBF7F4"],["Đen","#000000"]]},"Galaxy S26+":{"vm":["256GB","512GB"],"vc":[["Đen","#000000"],["Xanh Dương","#A3C3FF"],["Tím","#A17ECC"],["Trắng","#FBF7F4"]]},"Galaxy Z Flip8":{"vm":["12GB/256GB","12GB/512GB"],"vc":[["Trắng","#FBF7F4"],["Đen","#000000"],["Hồng","#FFE3E3"]]},"Galaxy S26 Ultra":{"vm":["12GB/256GB","12GB/512GB","16GB/1TB"],"vc":[["Xanh Dương","#A3C3FF"],["Trắng","#FBF7F4"],["Đen","#000000"],["Tím","#A17ECC"]]},"Galaxy Z Fold8 Ultra":{"vm":["12GB/256GB","12GB/512GB","16GB/1TB"],"vc":[["Đen","#000000"],["Tím","#A17ECC"],["Trắng","#FBF7F4"]]},"Galaxy Z Fold8":{"vm":["12GB/256GB","12GB/512GB","16GB/1TB"],"vc":[["Đen","#000000"],["Trắng","#FBF7F4"],["Tím","#A17ECC"]]}};
 PHONES.forEach(p=>{const v=SS_VAR[p.name];if(v){p.vm=v.vm;p.vc=v.vc}});
+/* Máy thông minh hay điện thoại phổ thông (nút bấm)? */
+function isSmart(p){
+  const os=(p.specs&&p.specs["Hệ điều hành"])||"";
+  if(/android|ios/i.test(os))return true;
+  if(/^(Nokia|Masstel|Mobell|XPhone)$/.test(p.brand))return false;
+  return (p.price||0)>=2e6||/^(iPhone|Samsung)$/.test(p.brand);
+}
 /* Mẫu tư vấn theo phân khúc giá: 1 giá rẻ (<6tr) · 2 tầm trung (6–13tr) · 3 cận cao cấp (13–25tr) · 4 cao cấp (≥25tr) */
 function genScript(p){
   const s=p.specs||{};
@@ -355,7 +407,7 @@ function genScript(p){
   const size=parts.find(x=>/inch/.test(x)),hz=parts.find(x=>/Hz/.test(x)),tech=parts.find(x=>x!==size&&x!==hz);
   const chip=s["Chip"]&&s["Chip"]!=="Đang cập nhật"?s["Chip"]:"";
   const mem=s["RAM / Bộ nhớ"]||"",main=s["Camera chính"],front=((s["Camera trước"]||"").match(/\d+\s*MP/)||[])[0],camS=s["Camera sau"]||"",pin=s["Pin"],sac=s["Sạc nhanh"],ip=s["Kháng nước/bụi"],os=s["Hệ điều hành"]||"",net=s["Mạng"];
-  const smart=/android|ios/i.test(os)&&!!size;
+  const smart=isSmart(p);
   const o=[];
   if(!smart){
     o.push(`${p.name} là điện thoại phổ thông${net?` hỗ trợ ${net}`:""}${size?`, màn hình ${size}`:""}, dễ dùng cho nghe gọi và nhắn tin.`);
@@ -375,7 +427,8 @@ function genScript(p){
   if(T===4)o.push("Anh chị đang dùng máy gì, và hay dùng để chụp ảnh, chơi game hay làm việc nhiều ạ?");
   else if(T===3)o.push("Anh chị thường dùng điện thoại để chụp ảnh, chơi game hay xem phim nhiều hơn ạ?");
   // 2. Màn hình
-  if(fold)o.push(`${p.name} là điện thoại gập với màn hình chính ${size}, mở ra rộng như một chiếc máy tính bảng, xem phim, làm việc và chia đôi màn hình đa nhiệm rất sướng.`);
+  if(!size){}
+  else if(fold)o.push(`${p.name} là điện thoại gập với màn hình chính ${size}, mở ra rộng như một chiếc máy tính bảng, xem phim, làm việc và chia đôi màn hình đa nhiệm rất sướng.`);
   else if(flip)o.push(`${p.name} là điện thoại gập vỏ sò nhỏ gọn, gập lại bỏ túi vừa vặn, mở ra là màn hình ${size}${tech?" "+tech:""}, thời trang và rất nổi bật.`);
   else if(T===1)o.push(`${p.name} có màn hình ${size}${hzTxt}, giúp xem YouTube, TikTok, Facebook mượt mà.`);
   else if(T===2)o.push(`${p.name} có màn hình ${size}${tech?" "+tech:""}${hzTxt}, hiển thị màu sắc sống động, xem phim, lướt mạng rất đã mắt.`);
@@ -414,7 +467,7 @@ function genScriptOld(p){
   const size=parts.find(x=>/inch/.test(x)),hz=parts.find(x=>/Hz/.test(x)),tech=parts.find(x=>x!==size&&x!==hz);
   const chip=s["Chip"]&&s["Chip"]!=="Đang cập nhật"?s["Chip"]:"";
   const mem=s["RAM / Bộ nhớ"]||"",main=s["Camera chính"],front=s["Camera trước"],pin=s["Pin"],sac=s["Sạc nhanh"],ip=s["Kháng nước/bụi"],os=s["Hệ điều hành"]||"",net=s["Mạng"];
-  const smart=/android|ios/i.test(os)&&!!size;
+  const smart=isSmart(p);
   const o=[];
   if(!smart){
     o.push(`${p.name} là điện thoại phổ thông${net?` hỗ trợ ${net}`:""}${size?`, màn hình ${size}`:""}, dễ dùng cho nghe gọi và nhắn tin.`);
@@ -640,13 +693,235 @@ document.addEventListener("input",e=>{
   if(e.target.id==="q"){S.q=e.target.value;refreshList()}
   if(e.target.id==="pq"){S.pq=e.target.value;$("#plist").innerHTML=PList()}
 });
+/* ===== TRỢ LÝ AI: hiểu câu hỏi tiếng Việt, tra 159 máy ngay trong app (không cần mạng) ===== */
+(function(){
+  const CATURL=CATPIC.match(/<image href="([^"]+)"/)[1];
+  document.documentElement.style.setProperty("--catimg",`url(${CATURL})`);
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const nrm=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d").replace(/[^a-z0-9+.,\s]/g," ").replace(/\s+/g," ").trim();
+  const fmt=v=>v?`${(v/1e6).toFixed(2).replace(/\.?0+$/,"").replace(".",",")} triệu`:"chưa có giá";
+  const num=(s,re)=>{const m=(s||"").match(re);return m?parseFloat(m[1].replace(",",".")):0};
+
+  /* ---- thông số dạng số của từng máy ---- */
+  function info(p){
+    if(p._i)return p._i;
+    const s=p.specs||{},scr=s["Màn hình"]||"",os=s["Hệ điều hành"]||"";
+    const ipm=(s["Kháng nước/bụi"]||"").match(/IP(\d)(\d)/);
+    const i={price:p.price||0,mah:num(s["Pin"],/(\d+)\s*mAh/i),mp:num(s["Camera chính"],/(\d+)/),w:num(s["Sạc nhanh"],/(\d+)/),
+      hz:num(scr,/(\d+)\s*Hz/i),size:num(scr,/([\d.]+)\s*inch/i),amoled:/amoled|oled/i.test(scr),
+      ram:num(s["RAM / Bộ nhớ"],/^(\d+)\s*GB\s*\//i),lens:((s["Camera sau"]||"").match(/\d+\s*MP/g)||[]).length,
+      ip:ipm?+ipm[2]:0,g5:s["Mạng"]==="5G",fold:/fold|flip|razr/i.test(p.name),wt:num(s["Khối lượng"],/(\d+)/),chip:s["Chip"]||""};
+    i.basic=!isSmart(p);
+    return p._i=i;
+  }
+  const base=i=>i.mp/20+i.mah/2500+i.hz/60+i.ram/6+(i.amoled?1:0)+(i.g5?.5:0)+i.price/2e7;
+
+  /* ---- nhận diện tên máy trong câu hỏi ---- */
+  const BRW=/^(galaxy|samsung|xiaomi|oppo|vivo|realme|honor|motorola|nothing|nubia|tecno|masstel|mobell|nokia|xphone)\s*/i;
+  function aliases(p){
+    if(p._al)return p._al;
+    const mk=(t,pri)=>{t=nrm(t).replace(/\s/g,"");return t.length>=3?{a:t,pri}:null};
+    const strip=t=>t.replace(/\s*(5g|4g)\s*$/i,"");
+    const sh=p.name.replace(BRW,"");
+    const L=[mk(p.name,2),mk(sh,2),mk(strip(p.name),1),mk(strip(sh),1)];
+    if(p.brand==="iPhone"){const n=p.name.replace(/^iphone\s*/i,"");L.push(mk(n,2),mk(strip(n),1))}
+    if(p.brand==="Samsung")L.push(mk("galaxy "+sh,2));
+    const m=new Map();L.filter(Boolean).forEach(x=>{if(!m.has(x.a)||m.get(x.a)<x.pri)m.set(x.a,x.pri)});
+    return p._al=[...m].map(([a,pri])=>({a,pri,nd:!/\d/.test(a)}));
+  }
+  function findPhones(q){
+    let s=q.replace(/\s/g,""),tok=q.split(" "),found=[];const orig=s,pos=new Map();
+    for(let k=0;k<3;k++){
+      let best=null,bl=0,bp=0,ba="";
+      for(const p of PHONES){
+        if(found.includes(p))continue;
+        for(const x of aliases(p)){
+          if(x.a.length<bl||(x.a.length===bl&&x.pri<=bp))continue;
+          const ok=(x.a.length<=4||(x.nd&&x.a.length<6))?tok.includes(x.a):s.includes(x.a);   // tên ngắn (a07, duo, air…) phải là nguyên từ, tránh khớp nhầm “15 tr” → “15t”
+          if(!ok)continue;
+          best=p;bl=x.a.length;bp=x.pri;ba=x.a;
+        }
+      }
+      if(!best)break;found.push(best);pos.set(best,orig.indexOf(ba));s=s.replace(ba,"|");
+      // đánh dấu các từ đã dùng để không khớp lại (vd “iphone air” không khớp thêm “air” của máy khác)
+      for(let b=0;b<tok.length;b++){let acc="";for(let a=b;a>=0;a--){acc=tok[a]+acc;if(acc.includes(ba)){for(let c=a;c<=b;c++)tok[c]="|";b=tok.length;break}if(acc.length>ba.length+12)break}}
+    }
+    return found.sort((x,y)=>pos.get(x)-pos.get(y));   // giữ đúng thứ tự người dùng nhắc tới
+  }
+  function similar(q){
+    const s=q.replace(/\s/g,"");if(s.length<3)return [];
+    return PHONES.filter(p=>aliases(p).some(x=>x.a.startsWith(s))).slice(0,5);
+  }
+
+  /* ---- ngân sách ---- */
+  function parseBudget(raw){
+    let t=raw.toLowerCase().replace(/</g," dưới ").replace(/>/g," trên ").replace(/(\d)\s*[-–~]\s*(\d)/g,"$1 đến $2");
+    const q=nrm(t),U="(?:trieu|tr|cu|m)\\b",N="(\\d+(?:[.,]\\d+)?)",f=x=>parseFloat(x.replace(",","."));
+    let m;
+    if(m=q.match(new RegExp(N+"\\s*(?:den|toi)\\s*"+N+"\\s*"+U)))return{lo:f(m[1])*1e6,hi:f(m[2])*1e6};
+    if(m=q.match(new RegExp("(?:duoi|toi da|khong qua|re hon|nho hon|max)\\s*"+N+"\\s*"+U)))return{lo:0,hi:f(m[1])*1e6};
+    if(m=q.match(new RegExp("(?:tren|it nhat|lon hon|tu|min)\\s*"+N+"\\s*"+U)))return{lo:f(m[1])*1e6,hi:Infinity};
+    if(m=q.match(new RegExp(N+"\\s*"+U))){const v=f(m[1])*1e6;return{lo:v*.75,hi:v*1.25,about:v}}
+    return null;
+  }
+  const BRANDS_RE=[["iPhone",/\b(iphone|apple|ip)\b/],["Samsung",/\b(samsung|ss|galaxy)\b/],["OPPO",/\boppo\b/],["Xiaomi",/\b(xiaomi|redmi|poco)\b/],["Vivo",/\bvivo\b/],["Realme",/\brealme\b/],["Honor",/\bhonor\b/],["Motorola",/\b(motorola|moto)\b/],["Nokia",/\bnokia\b/],["Nothing",/\bnothing\b/],["Nubia",/\bnubia\b/],["Tecno",/\btecno\b/],["Masstel",/\bmasstel\b/],["Mobell",/\bmobell\b/]];
+
+  /* ---- nhu cầu ---- */
+  const FEATS=[
+    {k:"battery",label:"pin trâu",re:/\bpin\b|trau bo|dung lau|pin (khoe|lau|trau|lon)/,score:i=>i.mah/1000*1.5,why:i=>i.mah?`Pin ${i.mah} mAh`:""},
+    {k:"camera",label:"chụp ảnh đẹp",re:/chup|camera|selfie|song ao|quay phim|anh dep|\bcam\b|livestream|tiktok/,score:i=>i.mp/12+i.lens*1.2+(i.price>25e6?2:0),why:(i,p)=>i.mp?`Camera chính ${i.mp}MP${i.lens>=3?`, ${i.lens} camera sau`:""}`:""},
+    {k:"game",label:"chơi game mạnh",re:/game|gaming|cau hinh|hieu nang|manh|muot|lag|nang/,score:i=>(i.hz>=120?3:0)+i.ram/3+i.price/4e6+(/snapdragon|dimensity|exynos|apple|a1\d|a2\d/i.test(i.chip)?2:0),why:i=>`${i.chip?i.chip.replace(/^Qualcomm\s*/,"")+" · ":""}${i.hz?i.hz+"Hz":""}${i.ram?` · RAM ${i.ram}GB`:""}`},
+    {k:"charge",label:"sạc nhanh",re:/sac nhanh|sac sieu|sac (manh|lien)|sac/,score:i=>i.w/12,why:i=>i.w?`Sạc nhanh ${i.w}W`:""},
+    {k:"screen",label:"màn hình đẹp",re:/man hinh|xem phim|amoled|oled|man (lon|dep)|hien thi|mau dep/,score:i=>(i.amoled?3:0)+i.hz/30+i.size,why:(i,p)=>`Màn hình ${i.size} inch${i.amoled?" OLED/AMOLED":""}${i.hz?` ${i.hz}Hz`:""}`},
+    {k:"compact",nobase:true,filter:i=>i.size>0&&i.wt>0,label:"nhỏ gọn",re:/nho gon|gon nhe|\bnhe\b|bo tui|nho nho/,score:i=>-(i.wt/40)-i.size*2,why:i=>i.wt?`Nhẹ ${i.wt}g · ${i.size} inch`:""},
+    {k:"water",label:"kháng nước",re:/chong nuoc|khang nuoc|chiu nuoc|\bip6|\bip68|boi/,filter:i=>i.ip>=7,score:i=>i.ip,why:(i,p)=>`Kháng nước ${(p.specs["Kháng nước/bụi"]||"")}`},
+    {k:"fold",label:"điện thoại gập",re:/\bgap\b|fold|flip|razr|vo so/,filter:i=>i.fold,score:i=>1,why:()=>"Điện thoại gập"},
+    {k:"g5",label:"có 5G",re:/\b5g\b/,filter:i=>i.g5,score:i=>0,why:()=>"Hỗ trợ 5G"},
+    {k:"cheap",nobase:true,label:"giá rẻ",re:/re nhat|gia re|\bre\b|tiet kiem|binh dan|sinh vien|hoc sinh/,score:i=>-i.price/1.5e6,why:()=>"Giá mềm"},
+    {k:"premium",label:"cao cấp",re:/cao cap|flagship|dat nhat|xin so|sang trong|dang cap|top/,score:i=>i.price/4e6,why:()=>"Dòng cao cấp"},
+    {k:"elder",nobase:true,label:"cho người lớn tuổi",re:/nguoi lon tuoi|bo me|ong ba|nguoi gia|cu gia|phim bam|chi nghe goi|co ban|man hinh lon de nhin/,basic:true,score:(i)=>(i.basic?4:0)+i.mah/2000+i.size/3-i.price/4e6,why:i=>i.basic?"Máy phổ thông, dễ dùng":`Màn hình lớn ${i.size} inch, pin ${i.mah} mAh`},
+  ];
+
+  /* ---- gợi ý máy ---- */
+  function recommend(raw,q){
+    const bud=parseBudget(raw),brands=BRANDS_RE.filter(([,re])=>re.test(q)).map(b=>b[0]),feats=FEATS.filter(f=>f.re.test(q));
+    if(!bud&&!brands.length&&!feats.length)return null;
+    const wantBasic=feats.some(f=>f.basic)||(bud&&bud.hi<=1.5e6);
+    let pool=PHONES.filter(p=>p.specs&&(wantBasic||!info(p).basic));
+    if(brands.length)pool=pool.filter(p=>brands.includes(p.brand));
+    {const priced=pool.filter(p=>info(p).price>0);if(priced.length)pool=priced}   // bỏ máy chưa có giá
+    feats.forEach(f=>{if(f.filter){const r=pool.filter(p=>f.filter(info(p)));if(r.length)pool=r}});
+    let inRange=pool;
+    if(bud)inRange=pool.filter(p=>{const v=info(p).price;return v&&v>=bud.lo&&v<=bud.hi});
+    let relaxed=false;
+    if(bud&&!inRange.length){relaxed=true;const mid=bud.about||(isFinite(bud.hi)?bud.hi:bud.lo);inRange=pool.filter(p=>info(p).price).sort((a,b)=>Math.abs(info(a).price-mid)-Math.abs(info(b).price-mid)).slice(0,6)}
+    const bw=feats.some(f=>f.nobase)?.03:.4;   // “rẻ”, “người lớn tuổi”, “nhỏ gọn” thì không ưu tiên máy mạnh
+    const sc=p=>{const i=info(p);let s=base(i)*bw;feats.forEach(f=>{s+=f.score(i,p)});return s};
+    const top=inRange.map(p=>({p,s:sc(p)})).sort((a,b)=>b.s-a.s).slice(0,4).map(x=>x.p);
+    const bTxt=bud?(bud.about?`khoảng ${fmt(bud.about)}`:isFinite(bud.hi)&&bud.lo>0?`từ ${fmt(bud.lo)} đến ${fmt(bud.hi)}`:isFinite(bud.hi)?`dưới ${fmt(bud.hi)}`:`từ ${fmt(bud.lo)} trở lên`):"";
+    const title=[brands.join("/"),feats.filter(f=>f.k!=="g5"||true).map(f=>f.label).join(", "),bTxt].filter(Boolean).join(" · ");
+    return{top,feats,title,relaxed,bTxt,empty:!top.length};
+  }
+
+  /* ---- HTML cho kết quả ---- */
+  function card(p,why){
+    const i=info(p);
+    return `<div class="pk"><div class="th">${p.img?`<img src="${p.img}" alt="">`:""}</div><div class="in"><b>${esc(p.name)}</b><span class="pr">${i.price?`từ ${fmt(i.price)}`:"chưa có giá"}</span>${why?`<small>${esc(why)}</small>`:""}<div class="bt"><button data-chat-open="${esc(p.name)}">Xem chi tiết</button><button class="alt" data-chat-script="${esc(p.name)}">Câu tư vấn</button></div></div></div>`;
+  }
+  function recHtml(r){
+    if(r.empty)return "Em chưa tìm thấy máy phù hợp với yêu cầu này. Bạn thử nới ngân sách hoặc bỏ bớt điều kiện nhé.";
+    const intro=r.relaxed?`Em chưa thấy máy nào đúng ${esc(r.bTxt)}, đây là các máy gần mức đó nhất:`:`Em gợi ý ${r.top.length} máy ${esc(r.title)}:`;
+    const cards=r.top.map(p=>{
+      const i=info(p);const why=r.feats.map(f=>f.why(i,p)).filter(Boolean).join(" · ");
+      return card(p,why||`${p.brand} · ${p.series}`);
+    }).join("");
+    return `<p>${intro}</p>${cards}<p class="hint">Giá tham khảo từ TGDĐ, bản bộ nhớ thấp nhất.</p>`;
+  }
+  function cmpHtml(a,b){
+    const A=info(a),B=info(b);const sp=(p,k)=>(p.specs||{})[k]||"—";
+    const rows=[["Giá",fmt(A.price),fmt(B.price)],["Màn hình",sp(a,"Màn hình"),sp(b,"Màn hình")],["Chip",sp(a,"Chip"),sp(b,"Chip")],["Camera chính",sp(a,"Camera chính"),sp(b,"Camera chính")],["Pin",sp(a,"Pin"),sp(b,"Pin")],["Sạc",sp(a,"Sạc nhanh"),sp(b,"Sạc nhanh")]];
+    const n=[];
+    const cmp=(label,x,y,unit,hi=true)=>{if(x&&y&&x!==y){const w=(hi?x>y:x<y)?a:b;n.push(`${label}: <b>${esc(short(w.name))}</b> ${hi?"nhỉnh hơn":"tốt hơn"} (${x}${unit} so với ${y}${unit})`)}};
+    if(A.price&&B.price&&A.price!==B.price)n.push(`Giá: <b>${esc(short((A.price<B.price?a:b).name))}</b> rẻ hơn ${fmt(Math.abs(A.price-B.price))}`);
+    cmp("Pin",A.mah,B.mah," mAh");cmp("Camera chính",A.mp,B.mp,"MP");cmp("Sạc nhanh",A.w,B.w,"W");cmp("Tần số quét",A.hz,B.hz,"Hz");
+    return `<p>Em so sánh <b>${esc(a.name)}</b> và <b>${esc(b.name)}</b>:</p><div class="tb">${rows.map(r=>`<div class="r"><span>${r[0]}</span><b>${esc(r[1])}</b><b>${esc(r[2])}</b></div>`).join("")}</div>${n.length?`<p>${n.map(x=>"• "+x).join("<br>")}</p>`:""}<div class="bt"><button data-chat-cmp="${esc(a.name)}|${esc(b.name)}">Mở bảng so sánh đầy đủ</button></div>`;
+  }
+  function phoneHtml(p){
+    const i=info(p),s=p.specs;
+    const vm=(p.vm||[]).map(x=>x.replace("/"," / ")).join(", ");
+    const colors=(p.vc||[]).map(c=>c[0]).filter(Boolean).join(", ");
+    return `<p><b>${esc(p.name)}</b> · ${i.price?`từ <b>${fmt(i.price)}</b>`:"chưa có giá"}</p><p>${[s["Màn hình"]&&"Màn hình "+s["Màn hình"],s["Chip"]&&"Chip "+s["Chip"],s["Camera chính"]&&"Camera chính "+s["Camera chính"],s["Pin"]&&"Pin "+s["Pin"]+(s["Sạc nhanh"]?`, sạc ${s["Sạc nhanh"]}`:"")].filter(Boolean).map(esc).join("<br>")}</p>${vm?`<p>Bộ nhớ: ${esc(vm)}</p>`:""}${colors?`<p>Màu: ${esc(colors)}</p>`:""}<div class="bt"><button data-chat-open="${esc(p.name)}">Xem chi tiết</button><button class="alt" data-chat-script="${esc(p.name)}">Câu tư vấn</button></div>`;
+  }
+  const short=n=>n.replace(/^Galaxy /,"");
+
+  /* ---- trả lời ---- */
+  const SUGG=["Máy pin trâu dưới 8 triệu","Máy chụp ảnh đẹp khoảng 15 triệu","iPhone nào đáng mua","So sánh S26 Ultra và iPhone 17 Pro","Máy cho người lớn tuổi","Máy chơi game mạnh dưới 12 triệu"];
+  function answer(raw){
+    const q=nrm(raw);
+    if(!q)return null;
+    if(/^(chao|hello|hi|alo|xin chao|hey|helo)( em| ban| nhe)?$/.test(q))return `<p>Chào bạn! Em là trợ lý của Điệp TGDĐ. Bạn cần tìm máy theo ngân sách, nhu cầu, hay so sánh hai máy cứ hỏi em nhé 😊</p>`;
+    if(/cam on|thanks|thank you|tks/.test(q)&&q.length<30)return `<p>Dạ không có gì ạ, cần gì bạn cứ hỏi em tiếp nhé 😊</p>`;
+    const ph=findPhones(q);
+    if(ph.length>=2)return cmpHtml(ph[0],ph[1]);
+    if(ph.length===1){
+      const p=ph[0];
+      if(/so sanh|vs|khac nhau/.test(q))return `<p>Bạn muốn so sánh <b>${esc(p.name)}</b> với máy nào? Gõ ví dụ: “so sánh ${esc(short(p.name))} và iPhone 17 Pro”.</p>`;
+      if(/tu van|cach ban|kich ban|ban the nao|thuyet phuc|noi gi|cau tu van|chot/.test(q))return scriptHtml(p);
+      if(/mau|colour|color/.test(q)&&!/gia/.test(q)){const c=(p.vc||[]).map(x=>x[0]).filter(Boolean);return `<p><b>${esc(p.name)}</b> có ${p.vc&&p.vc.length?`${p.vc.length} màu${c.length?": "+esc(c.join(", ")):""}`:"chưa có dữ liệu màu"}.</p>`}
+      if(/dung luong|bo nho|rom|phien ban/.test(q)){const v=(p.vm||[]).map(x=>x.replace("/"," / "));return `<p><b>${esc(p.name)}</b> có bản: ${esc(v.join(", ")||(p.specs["RAM / Bộ nhớ"]||"chưa rõ"))}.</p>`}
+      if(/\bgia\b|bao nhieu|bn tien/.test(q))return `<p><b>${esc(p.name)}</b> giá từ <b>${fmt(info(p).price)}</b> (bản bộ nhớ thấp nhất, giá tham khảo từ TGDĐ).</p>`;
+      return phoneHtml(p);
+    }
+    const r=recommend(raw,q);
+    if(r)return recHtml(r);
+    const sg=similar(q);
+    if(sg.length)return `<p>Ý bạn là máy nào ạ?</p>${sg.map(p=>card(p,"")).join("")}`;
+    return `<p>Em chưa hiểu rõ ý bạn. Bạn thử hỏi theo mẫu này nhé:</p><p>• “Máy pin trâu dưới 8 triệu”<br>• “Samsung chụp ảnh đẹp khoảng 15 triệu”<br>• “So sánh A57 và Reno15”<br>• “Tư vấn iPhone 17 Pro”</p>`;
+  }
+  function scriptHtml(p){
+    return `<p>Câu tư vấn gợi ý cho <b>${esc(p.name)}</b>:</p><p class="sc">${esc(p.script||"")}</p><div class="bt"><button data-chat-copy="${esc(p.name)}">Sao chép</button><button class="alt" data-chat-open="${esc(p.name)}">Xem chi tiết</button></div>`;
+  }
+
+  /* ---- giao diện ---- */
+  const fab=document.createElement("button");fab.id="fab";fab.setAttribute("aria-label","Mở trợ lý AI");fab.innerHTML='<span class="av"></span><span class="beta">BETA</span>';
+  const tip=document.createElement("div");tip.id="fabtip";tip.className="hide";tip.innerHTML="<b>Trợ lý AI Điệp TGDĐ</b><span>Em rất sẵn lòng hỗ trợ bạn 😊</span>";
+  const chat=document.createElement("div");chat.id="chat";chat.className="hide";
+  chat.innerHTML=`<div class="cw"><div class="ch"><span class="av"></span><div class="tt"><b>Trợ lý AI</b><small>Điệp TGDĐ · Beta</small></div><button id="cx" aria-label="Đóng">×</button></div><div id="cm"></div><div id="cs"></div><form id="cf"><input id="ci" type="text" placeholder="Hỏi em về điện thoại…" autocomplete="off" enterkeyhint="send"><button type="submit" aria-label="Gửi">➤</button></form></div>`;
+  document.body.append(fab,tip,chat);
+  const cm=chat.querySelector("#cm"),cs=chat.querySelector("#cs"),ci=chat.querySelector("#ci");
+  cs.innerHTML=SUGG.map(t=>`<button data-ask="${esc(t)}">${esc(t)}</button>`).join("");
+  let greeted=false;
+  const addMsg=(who,html)=>{const d=document.createElement("div");d.className="mg "+who;d.innerHTML=html;cm.appendChild(d);cm.scrollTop=cm.scrollHeight;return d};
+  function ask(text){
+    text=text.trim();if(!text)return;
+    addMsg("me",esc(text));ci.value="";
+    const t=addMsg("bot",'<span class="dots"><i></i><i></i><i></i></span>');
+    setTimeout(()=>{let h;try{h=answer(text)}catch(e){h="<p>Em gặp lỗi nhỏ, bạn hỏi lại giúp em nhé.</p>"}t.innerHTML=h||"";cm.scrollTop=cm.scrollHeight},450);
+  }
+  function syncChat(){
+    const on=!!S.chat;chat.classList.toggle("hide",!on);fab.classList.toggle("hide",on);tip.classList.add("hide");
+    document.body.style.overflow=on?"hidden":"";
+  }
+  window.syncChat=syncChat;
+  window.__assistant={answer,recommend,info,findPhones};
+  function openChat(){
+    S.chat=true;pushNav();syncChat();
+    if(!greeted){greeted=true;addMsg("bot","<p>Chào bạn! Em là trợ lý AI của <b>Điệp TGDĐ</b> 😊</p><p>Em giúp bạn tìm máy theo <b>ngân sách</b> và <b>nhu cầu</b>, so sánh hai máy, tra giá – màu – bộ nhớ và gợi ý câu tư vấn cho khách. Bạn hỏi em nhé!</p>")}
+    setTimeout(()=>{cm.scrollTop=cm.scrollHeight},0);
+  }
+  function closeChat(){S.chat=false;syncChat();try{if(history.state&&history.state.chat)history.back()}catch(e){}}
+  function leaveChatTo(state){ // đóng khung chat rồi đi tới màn hình khác, giữ lịch sử gọn
+    S.chat=false;syncChat();
+    Object.assign(S,state);
+    try{history.replaceState({n:(history.state&&history.state.n)||1,view:S.view,open:S.open,tab:S.tab,pick:null,chat:false,y:0},"")}catch(e){}
+    render();window.scrollTo({top:0,left:0,behavior:"instant"});
+  }
+  fab.addEventListener("click",openChat);
+  chat.addEventListener("click",e=>{
+    const t=e.target;
+    if(t===chat||t.closest("#cx")){closeChat();return}
+    const b=t.closest("[data-ask],[data-chat-open],[data-chat-cmp],[data-chat-copy],[data-chat-script]");if(!b)return;
+    const d=b.dataset;
+    if(d.ask!==undefined){ask(d.ask);return}
+    if(d.chatScript!==undefined){const p=find(d.chatScript);if(p){addMsg("me",esc("Câu tư vấn "+short(p.name)));addMsg("bot",scriptHtml(p))}return}
+    if(d.chatOpen!==undefined){S.vm=0;S.vc=0;leaveChatTo({view:"detail",open:d.chatOpen,tab:"tong",pick:null});return}
+    if(d.chatCmp!==undefined){S.cmp=d.chatCmp.split("|").slice(0,2);leaveChatTo({view:"compare",pick:null});return}
+    if(d.chatCopy!==undefined){const p=find(d.chatCopy);try{navigator.clipboard.writeText(p.script)}catch(e){}b.textContent="Đã sao chép ✓";return}
+  });
+  chat.querySelector("#cf").addEventListener("submit",e=>{e.preventDefault();ask(ci.value)});
+  // lời chào nổi bên cạnh nút, hiện 1 lần mỗi lượt mở app
+  try{if(!sessionStorage.getItem("tipSeen")){sessionStorage.setItem("tipSeen","1");setTimeout(()=>{if(!S.chat){tip.classList.remove("hide");setTimeout(()=>tip.classList.add("hide"),7000)}},1800)}}catch(e){}
+  tip.addEventListener("click",openChat);
+})();
+
 /* ===== Nút Back của điện thoại: quay lại màn hình trước thay vì thoát app ===== */
-function pushNav(){try{history.replaceState(Object.assign({},history.state,{y:scrollY}),"");const n=((history.state&&history.state.n)||0)+1;history.pushState({n,view:S.view,open:S.open,tab:S.tab,pick:S.pick},"")}catch(e){}}
+function pushNav(){try{history.replaceState(Object.assign({},history.state,{y:scrollY}),"");const n=((history.state&&history.state.n)||0)+1;history.pushState({n,view:S.view,open:S.open,tab:S.tab,pick:S.pick,chat:!!S.chat},"")}catch(e){}}
 function popSheet(){try{if(history.state&&history.state.pick!=null)history.back()}catch(e){}}
 try{history.replaceState({n:0,view:"home",open:null,tab:"tong",pick:null},"")}catch(e){}
 window.addEventListener("popstate",e=>{
   const st=e.state;if(!st)return;
-  S.view=st.view;S.open=st.open;S.tab=st.tab||"tong";S.pick=st.pick;
+  S.view=st.view;S.open=st.open;S.tab=st.tab||"tong";S.pick=st.pick;S.chat=!!st.chat;
+  if(window.syncChat)window.syncChat();
   render();window.scrollTo({top:S.pick==null?(st.y||0):scrollY,left:0,behavior:"instant"});
 });
 if("serviceWorker" in navigator&&location.protocol!=="file:"){
