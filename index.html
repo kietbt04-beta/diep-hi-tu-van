@@ -179,6 +179,12 @@ mark{background:linear-gradient(transparent 55%,#ffc2d6 55%);color:inherit;font-
 .pr .th img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .pr b{display:block;font-size:15px;line-height:1.25}
 .pr span{font-size:12px;color:var(--mut)}
+.cvar{display:flex;flex-direction:column;gap:9px;margin-top:3px}
+.cchips{display:flex;flex-wrap:wrap;gap:6px}
+.cchip{padding:5px 10px;border-radius:9px;border:1.5px solid #ecd6e1;background:#fff;font-size:12px;font-weight:600;color:var(--tx);line-height:1.2}
+.cdots{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.cdot{width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);display:block}
+.cmore{font-size:11px;font-weight:700;color:var(--mut)}
 .var{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:14px 16px 16px;margin-bottom:12px}
 .var .vl{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 8px}
 .var .vl b{color:var(--navy);text-transform:none;letter-spacing:0;font-size:14px}
@@ -503,13 +509,22 @@ function Results(groups,q){
 }
 function Card(p){
   const [a,b]=THEME[p.series]||["#334","#668"], on=S.cmp.includes(p.name);
-  const mini=p.specs?(p.mini||[]).map(v=>`<span>${v}</span>`).join(""):"";
+  const mini=p.specs?CardVar(p):"";
   return `<div class="pc" data-open="${p.name}">
     ${p.hot?'<div class="hot">BÁN CHẠY</div>':''}
     <button class="cmp ${on?'on':''}" data-cmp="${p.name}" aria-label="So sánh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">${on?'<path d="M5 12l5 5 9-10"/>':'<path d="M12 5v14M5 12h14"/>'}</svg></button>
     <div class="art" style="background:linear-gradient(145deg,${a}22,${b}33)">${phoneSVG(p)}</div>
     <div class="body"><div class="sr">${p.series}</div><div class="nm">${short(p.name)}</div>
-      ${p.specs?`<div class="mini">${mini}</div>`:'<span class="soonbadge">Chưa cập nhật</span>'}</div></div>`;
+      ${p.specs?mini:'<span class="soonbadge">Chưa cập nhật</span>'}</div></div>`;
+}
+function CardVar(p){
+  let vm=(p.vm||[]).filter(Boolean);
+  if(!vm.length&&p.specs&&p.specs["RAM / Bộ nhớ"])vm=[p.specs["RAM / Bộ nhớ"].replace(/\s+/g,"")];
+  const roms=[...new Set(vm.map(m=>m.split("/").pop().replace(/(\d)(GB|TB|MB)/i,"$1 $2")))];
+  const vc=p.vc||[];
+  const chips=roms.slice(0,4).map(r=>`<span class="cchip">${r}</span>`).join("")+(roms.length>4?`<span class="cchip">+${roms.length-4}</span>`:"");
+  const dots=vc.slice(0,7).map(c=>`<i class="cdot" style="--c:${c[1]||"#ccc"}"></i>`).join("")+(vc.length>7?`<span class="cmore">+${vc.length-7}</span>`:"");
+  return `<div class="cvar">${chips?`<div class="cchips">${chips}</div>`:""}${dots?`<div class="cdots">${dots}</div>`:""}</div>`;
 }
 function Variants(p){
   let vm=(p.vm||[]).filter(Boolean);
