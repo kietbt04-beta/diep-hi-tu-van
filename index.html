@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#ff8fb1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Điệp Hi">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Điệp Hi Meow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -629,6 +636,9 @@ document.addEventListener("input",e=>{
   if(e.target.id==="q"){S.q=e.target.value;refreshList()}
   if(e.target.id==="pq"){S.pq=e.target.value;$("#plist").innerHTML=PList()}
 });
+if("serviceWorker" in navigator&&location.protocol!=="file:"){
+  window.addEventListener("load",()=>{try{navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}});
+}
 render();
 </script>
 </body>
