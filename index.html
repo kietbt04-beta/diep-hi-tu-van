@@ -245,8 +245,12 @@ mark{background:linear-gradient(transparent 55%,#ffc2d6 55%);color:inherit;font-
 .var .vl b{color:var(--navy);text-transform:none;letter-spacing:0;font-size:14px}
 .var .vl:not(:first-child){margin-top:14px}
 .vchips{display:flex;flex-wrap:wrap;gap:8px}
-.vchip{padding:9px 14px;border-radius:12px;border:1.5px solid #ecd6e1;background:#fff;font-weight:600;font-size:14px;color:var(--tx)}
-.vchip.on{border-color:var(--gold);background:#fff0f6;color:var(--navy);box-shadow:0 0 0 3px rgba(255,127,165,.2)}
+.vchip,.vcol{min-height:44px;padding:9px 14px;border-radius:12px;border:1.5px solid #ecd6e1;background:#fff;font-weight:600;font-size:14px;color:var(--tx);text-align:left}
+.vcol{display:inline-flex;align-items:center;gap:9px;padding-left:11px}
+.vcol i{width:22px;height:22px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);flex:none}
+.vcol.noname{padding:9px 11px}
+.vchip.on,.vcol.on{border-color:var(--gold);background:#fff0f6;color:var(--navy);box-shadow:0 0 0 3px rgba(255,127,165,.2)}
+@media (max-width:420px){.var{padding:14px 12px 16px}.vchips{gap:8px}.vchip,.vcol{font-size:14px}}
 .vdots{display:flex;flex-wrap:wrap;gap:12px;padding:2px}
 .vdot{width:32px;height:32px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);position:relative}
 .vdot.on::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--gold)}
@@ -598,7 +602,7 @@ function Variants(p){
   const cname=vc[ci]&&vc[ci][0];
   return `<div class="var">
     ${vm.length?`<div class="vl">Dung lượng</div><div class="vchips">${vm.map((m,i)=>`<button class="vchip ${i===mi?"on":""}" data-vm="${i}">${m.replace("/"," / ")}</button>`).join("")}</div>`:""}
-    ${vc.length?`<div class="vl">Màu sắc${cname?` · <b>${cname}</b>`:""}</div><div class="vdots">${vc.map((c,i)=>`<button class="vdot ${i===ci?"on":""}" data-vc="${i}" style="--c:${c[1]||"#ccc"}" aria-label="${c[0]||"Màu "+(i+1)}"></button>`).join("")}</div>`:""}
+    ${vc.length?`<div class="vl">Màu sắc</div><div class="vchips">${vc.map((c,i)=>`<button class="vcol ${i===ci?"on":""}${c[0]?"":" noname"}" data-vc="${i}" aria-label="${c[0]||"Màu "+(i+1)}"><i style="--c:${c[1]||"#ccc"}"></i>${c[0]||""}</button>`).join("")}</div>`:""}
   </div>`;
 }
 function Detail(){
