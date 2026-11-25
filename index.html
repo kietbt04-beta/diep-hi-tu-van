@@ -912,7 +912,14 @@ document.addEventListener("input",e=>{
   });
   chat.querySelector("#cf").addEventListener("submit",e=>{e.preventDefault();ask(ci.value)});
   // lời chào nổi bên cạnh nút, hiện 1 lần mỗi lượt mở app
-  try{if(!sessionStorage.getItem("tipSeen")){sessionStorage.setItem("tipSeen","1");setTimeout(()=>{if(!S.chat){tip.classList.remove("hide");setTimeout(()=>tip.classList.add("hide"),7000)}},1800)}}catch(e){}
+  const TIPS=["Em rất sẵn lòng hỗ trợ bạn 😊","Cần tìm máy theo ngân sách? Hỏi em nhé 💬","Cần câu tư vấn cho khách? Em giúp ngay 😊","So sánh 2 máy nhanh, em làm được nè 📱","Máy pin trâu, chụp ảnh đẹp… hỏi em nha 😺"];
+  let tipI=0,tipT=0;
+  function showTip(){
+    if(S.chat||S.pick!=null||document.hidden)return;
+    tip.querySelector("span").textContent=TIPS[tipI++%TIPS.length];
+    tip.classList.remove("hide");clearTimeout(tipT);tipT=setTimeout(()=>tip.classList.add("hide"),6500);
+  }
+  setTimeout(()=>{showTip();setInterval(showTip,35000)},2000);   // lâu lâu lại nhắc một lần
   tip.addEventListener("click",openChat);
 })();
 
