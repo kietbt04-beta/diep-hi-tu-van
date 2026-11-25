@@ -187,11 +187,12 @@ mark{background:linear-gradient(transparent 55%,#ffc2d6 55%);color:inherit;font-
 .pr b{display:block;font-size:15px;line-height:1.25}
 .pr span{font-size:12px;color:var(--mut)}
 /* ----- Trợ lý AI ----- */
-#fab{position:fixed;right:14px;bottom:calc(78px + env(safe-area-inset-bottom));width:64px;height:64px;border-radius:50%;background:#fff;padding:3px;z-index:35;box-shadow:0 8px 24px rgba(90,45,110,.38)}
-.av{display:block;width:100%;height:100%;border-radius:50%;background:var(--catimg) 80.5% 52.4%/260% auto no-repeat,#ffe4ee}
+#fab{position:fixed;right:14px;bottom:calc(78px + env(safe-area-inset-bottom));width:52px;height:52px;border-radius:50%;background:#fff;padding:2px;z-index:35;box-shadow:0 6px 18px rgba(90,45,110,.35)}
+.av{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:linear-gradient(145deg,#ff8fb1,#c58bf2);overflow:hidden}
+.av svg{width:104%;height:auto;display:block;margin-top:4%}
 #fab .beta{position:absolute;top:-9px;left:-8px;background:#eef0f6;color:#475569;font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
 #fab:active{transform:scale(.95)}
-#fabtip{position:fixed;right:88px;bottom:calc(98px + env(safe-area-inset-bottom));max-width:230px;background:#fff;border-radius:18px;padding:10px 14px;z-index:35;box-shadow:0 8px 24px rgba(90,45,110,.25);line-height:1.35}
+#fabtip{position:fixed;right:76px;bottom:calc(86px + env(safe-area-inset-bottom));max-width:230px;background:#fff;border-radius:18px;padding:10px 14px;z-index:35;box-shadow:0 8px 24px rgba(90,45,110,.25);line-height:1.35}
 #fabtip b{display:block;font-size:14px;color:var(--tx)}
 #fabtip span{font-size:13px;color:var(--mut)}
 #chat{position:fixed;inset:0;z-index:60;background:rgba(40,15,50,.45);display:flex;align-items:flex-end;justify-content:center}
@@ -863,10 +864,11 @@ document.addEventListener("input",e=>{
   }
 
   /* ---- giao diện ---- */
-  const fab=document.createElement("button");fab.id="fab";fab.setAttribute("aria-label","Mở trợ lý AI");fab.innerHTML='<span class="av"></span><span class="beta">BETA</span>';
+  const fab=document.createElement("button");fab.id="fab";fab.setAttribute("aria-label","Mở trợ lý AI");const catSvg=id=>CATPIC.replace(/id="cc"/g,`id="${id}"`).replace(/url\(#cc\)/g,`url(#${id})`).replace(/ id="cp"/g,"");
+  fab.innerHTML=`<span class="av">${catSvg("ccf")}</span><span class="beta">BETA</span>`;
   const tip=document.createElement("div");tip.id="fabtip";tip.className="hide";tip.innerHTML="<b>Trợ lý AI Điệp TGDĐ</b><span>Em rất sẵn lòng hỗ trợ bạn 😊</span>";
   const chat=document.createElement("div");chat.id="chat";chat.className="hide";
-  chat.innerHTML=`<div class="cw"><div class="ch"><span class="av"></span><div class="tt"><b>Trợ lý AI</b><small>Điệp TGDĐ · Beta</small></div><button id="cx" aria-label="Đóng">×</button></div><div id="cm"></div><div id="cs"></div><form id="cf"><input id="ci" type="text" placeholder="Hỏi em về điện thoại…" autocomplete="off" enterkeyhint="send"><button type="submit" aria-label="Gửi">➤</button></form></div>`;
+  chat.innerHTML=`<div class="cw"><div class="ch"><span class="av">${catSvg("cch")}</span><div class="tt"><b>Trợ lý AI</b><small>Điệp TGDĐ · Beta</small></div><button id="cx" aria-label="Đóng">×</button></div><div id="cm"></div><div id="cs"></div><form id="cf"><input id="ci" type="text" placeholder="Hỏi em về điện thoại…" autocomplete="off" enterkeyhint="send"><button type="submit" aria-label="Gửi">➤</button></form></div>`;
   document.body.append(fab,tip,chat);
   const cm=chat.querySelector("#cm"),cs=chat.querySelector("#cs"),ci=chat.querySelector("#ci");
   cs.innerHTML=SUGG.map(t=>`<button data-ask="${esc(t)}">${esc(t)}</button>`).join("");
