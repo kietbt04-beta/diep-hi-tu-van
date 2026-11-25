@@ -1,5 +1,5 @@
 // Service worker: ưu tiên mạng (luôn lấy bản mới nhất), mất mạng thì dùng bản đã lưu.
-const CACHE = "diep-hi-v1";
+const CACHE = "diep-hi-v2";
 const CORE = ["./", "icon-192.png", "icon-512.png", "manifest.webmanifest"];
 
 self.addEventListener("install", e => {
