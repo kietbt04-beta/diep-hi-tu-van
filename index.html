@@ -240,6 +240,17 @@ mark{background:linear-gradient(transparent 55%,#ffc2d6 55%);color:inherit;font-
 .cdots{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .cdot{width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);display:block}
 .cmore{font-size:11px;font-weight:700;color:var(--mut)}
+@media (max-width:640px){
+  .pc .body{padding:10px 11px 13px;gap:5px}
+  .pc .nm{font-size:14px}
+  .cvar{gap:8px;margin-top:4px}
+  .cchips{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+  .cchips[data-n="1"]{grid-template-columns:1fr}
+  .cchip{padding:5px 2px;font-size:11.5px;text-align:center;border-radius:8px;white-space:nowrap}
+  .cdots{gap:5px}
+  .cdot{width:14px;height:14px}
+  .cmore{font-size:10.5px}
+}
 .var{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:14px 16px 16px;margin-bottom:12px}
 .var .vl{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 8px}
 .var .vl b{color:var(--navy);text-transform:none;letter-spacing:0;font-size:14px}
@@ -600,7 +611,8 @@ function CardVar(p){
   const vc=p.vc||[];
   const chips=roms.slice(0,4).map(r=>`<span class="cchip">${r}</span>`).join("")+(roms.length>4?`<span class="cchip">+${roms.length-4}</span>`:"");
   const dots=vc.slice(0,7).map(c=>`<i class="cdot" style="--c:${c[1]||"#ccc"}"></i>`).join("")+(vc.length>7?`<span class="cmore">+${vc.length-7}</span>`:"");
-  return `<div class="cvar">${chips?`<div class="cchips">${chips}</div>`:""}${dots?`<div class="cdots">${dots}</div>`:""}</div>`;
+  const cn=Math.min(roms.length,4)+(roms.length>4?1:0);
+  return `<div class="cvar">${chips?`<div class="cchips" data-n="${cn}">${chips}</div>`:""}${dots?`<div class="cdots">${dots}</div>`:""}</div>`;
 }
 function Variants(p){
   let vm=(p.vm||[]).filter(Boolean);
