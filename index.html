@@ -615,17 +615,21 @@ document.addEventListener("click",e=>{
   const d=t.dataset;
   if(d.vm!==undefined){S.vm=+d.vm;const y=scrollY;render();scrollTo(0,y);return}
   if(d.vc!==undefined){S.vc=+d.vc;const y=scrollY;render();scrollTo(0,y);return}
-  if(d.slot!==undefined){S.pick=+d.slot;S.pq="";render();return}
+  if(d.slot!==undefined){S.pick=+d.slot;S.pq="";pushNav();render();return}
   if(d.rm!==undefined){S.cmp.splice(+d.rm,1);render();return}
-  if(d.choose!==undefined){const i=S.pick,l=S.cmp.filter(n=>n!==d.choose);if(i<l.length)l[i]=d.choose;else l.push(d.choose);S.cmp=l.slice(0,2);S.pick=null;render();return}
-  if(t.hasAttribute("data-closesheet")){if(t.hasAttribute("data-bd")&&e.target!==t)return;S.pick=null;render();return}
+  if(d.choose!==undefined){const i=S.pick,l=S.cmp.filter(n=>n!==d.choose);if(i<l.length)l[i]=d.choose;else l.push(d.choose);S.cmp=l.slice(0,2);S.pick=null;render();popSheet();return}
+  if(t.hasAttribute("data-closesheet")){if(t.hasAttribute("data-bd")&&e.target!==t)return;S.pick=null;render();popSheet();return}
   if(d.cmp!==undefined){
     e.stopPropagation();const n=d.cmp,i=S.cmp.indexOf(n);
     if(i>-1)S.cmp.splice(i,1);else{if(S.cmp.length>=2)S.cmp.shift();S.cmp.push(n);toast(S.cmp.length===2?"Đã chọn đủ 2 máy – bấm So sánh":"Đã thêm vào so sánh")}
     const y=scrollY;render();scrollTo(0,y);return;
   }
-  if(d.open){S.vm=0;S.vc=0;S.open=d.open;S.view="detail";S.tab=find(d.open).specs?"tong":"tong";render();scrollTo(0,0);return}
-  if(d.go){S.view=d.go;render();scrollTo(0,0);return}
+  if(d.open){S.vm=0;S.vc=0;S.open=d.open;S.view="detail";S.tab="tong";pushNav();render();scrollTo(0,0);return}
+  if(d.go){
+    // nút mũi tên quay lại trên đầu trang = bấm Back của điện thoại
+    if(d.go==="home"&&t.classList.contains("iconbtn")&&history.state&&history.state.n>0){history.back();return}
+    if(S.view!==d.go){S.view=d.go;S.pick=null;pushNav()}
+    render();scrollTo(0,0);return}
   if(d.brand){if(!BRANDS.find(b=>b.n===d.brand).ok)toast("Hãng này sắp có dữ liệu");S.brand=d.brand;S.series="Tất cả";S.q="";render();return}
   if(d.series){S.series=d.series;render();return}
   if(d.tab){S.tab=d.tab;const y=scrollY;render();scrollTo(0,y);return}
@@ -635,6 +639,15 @@ document.addEventListener("click",e=>{
 document.addEventListener("input",e=>{
   if(e.target.id==="q"){S.q=e.target.value;refreshList()}
   if(e.target.id==="pq"){S.pq=e.target.value;$("#plist").innerHTML=PList()}
+});
+/* ===== Nút Back của điện thoại: quay lại màn hình trước thay vì thoát app ===== */
+function pushNav(){try{const n=((history.state&&history.state.n)||0)+1;history.pushState({n,view:S.view,open:S.open,tab:S.tab,pick:S.pick},"")}catch(e){}}
+function popSheet(){try{if(history.state&&history.state.pick!=null)history.back()}catch(e){}}
+try{history.replaceState({n:0,view:"home",open:null,tab:"tong",pick:null},"")}catch(e){}
+window.addEventListener("popstate",e=>{
+  const st=e.state;if(!st)return;
+  S.view=st.view;S.open=st.open;S.tab=st.tab||"tong";S.pick=st.pick;
+  render();if(S.pick==null)scrollTo(0,0);
 });
 if("serviceWorker" in navigator&&location.protocol!=="file:"){
   window.addEventListener("load",()=>{try{navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}});
